@@ -1,11 +1,10 @@
 import "./App.css";
-import Character_list from "./components/Character_list";
+import MainComponent from "./components/MainComponent";
 
 function App() {
   return (
     <>
-      <h1>Hi mom!</h1>
-      <Character_list />
+      <MainComponent />
     </>
   );
 }
