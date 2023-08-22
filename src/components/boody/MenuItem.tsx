@@ -1,9 +1,9 @@
 import { Card, CardImg, CardImgOverlay, CardText, CardTitle } from "reactstrap";
 
-const MenuItem = ({ dish }) => {
+const MenuItem = ({ dish, onSelectDish }) => {
   return (
     <div>
-      <Card inverse>
+      <Card inverse onClick={() => onSelectDish(dish)}>
         <CardImg
           alt="Card image cap"
           src={dish.image}
@@ -13,9 +13,10 @@ const MenuItem = ({ dish }) => {
           }}
           width="100%"
         />
+        <div className="bg-dark opacity-50 w-100 h-100 position-absolute"></div>
         <CardImgOverlay>
           <CardTitle
-            style={{ fontSize: 24, color: "black", textAlign: "center" }}
+            style={{ fontSize: 24, color: "white", textAlign: "center" }}
             tag="h5"
           >
             {dish.name}
