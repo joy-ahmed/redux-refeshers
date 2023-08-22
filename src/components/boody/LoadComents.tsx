@@ -1,4 +1,5 @@
 import { ListGroup, ListGroupItem } from "reactstrap";
+import dateFormat from "dateformat";
 
 const LoadComents = ({ comments }) => {
   return (
@@ -7,7 +8,9 @@ const LoadComents = ({ comments }) => {
         <ListGroupItem key={comment.id}>
           <h5>{comment.author}</h5>
           <p>{comment.comment}</p>
-          <p className="text-muted">{comment.date}</p>
+          <p className="text-muted">
+            {dateFormat(comment.date, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
+          </p>
         </ListGroupItem>
       ))}
     </ListGroup>
